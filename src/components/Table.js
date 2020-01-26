@@ -11,6 +11,8 @@ import Iframe from 'react-iframe'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Container } from 'react-bootstrap';
+import { Col,Row } from 'react-bootstrap';
 const initalstate = {
   show: false,
   showedit: false,
@@ -200,11 +202,15 @@ class Vendortable extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Button variant="primary" onClick={this.handleshow}>Create Vendor</Button>
-        <form onSubmit={this.searchvendor} >
-          <input type="text" ref="query" />
-          <input type="submit" />
-        </form>
+        <Container>
+          <Row>
+            <Col md={6}> <Button variant="primary" onClick={this.handleshow}>Create Vendor</Button></Col>
+            <Col md={6}> <form onSubmit={this.searchvendor} ><input type="text" ref="query" /><input type="submit" /></form></Col>
+          </Row>
+        </Container>
+    
+        
+       
         <Table striped bordered hover size="sm">
           <thead>
             <tr>
